@@ -15,87 +15,306 @@ window.addEventListener('DOMContentLoaded', () => {
     const scenes = {
         // --- Scene pembuka ---
         scene1: {
-            text: "<p>Selamat datang di Nuklir dan Nektar Magis, {{nama}}. Pilih karakter yang ingin kamu mainkan:</p>",
+            text: "<p>Selamat datang di dunia yang magis dengan penuh nuansa kegelapan, {{nama}}. Pilih karakter yang ingin kamu mainkan:</p>",
             img: "../images/opening_scene.jpg",
             options: [
-                { text: "aria-Pencari Kebenaran (Karakter Wanita)", nextScene: "aria_scene1" },
-                { text: "kael-Pejuang Pemberontak (Karakter Laki-laki)", nextScene: "kael_scene1" }
+                { text: "astra-the survivor (karakter laki-laki)", nextScene: "a1" },
+                
             ]
         },
 
         // --- Alur Aria ---
-        aria_scene1: {
-            text: `<p>Dunia ini sudah mati. Namun harapan kecil tetap hidup di dalam mimpimu yang selalu berulang—tentang reruntuhan, sosok berjubah hitam, dan sebutir cahaya yang menolak padam.`,
+        a1: {
+            text: `<p>aku terbangun dari pingsan ku setelah bom nuklir di jatuhkan dari langit, ntah bagaimana aku bisa selamat.
+
+            <p>setelah aku terbangun aku melihat banyak puing-puing dan reruntuhan bangunan di tengah kota.
+
+            <p>kepala ku sangat pusing dan aku berusaha untuk berdiri, karena hari sudah malam dan aku harus menjadi tempat yang aman.
+            
+            <p> <strong>aku berpikir sejenak arah mana yang akan aku pergi</strong>`,
             img: "../images/aria_room.jpg",
             options: [
-                { text: "Periksa catatan di dinding", nextScene: "aria_scene2" },
-                { text: "Keluar kamar mencari Kael", nextScene: "aria_scene3" }
+                { text: "pergi ke pusat kota", nextScene: "a2" },
+                { text: "pergi ke ujung kota dekat dengan hutan", nextScene: "a3" }
             ]
         },
-        aria_scene2: {
-            text: `<p>Dinding kamarmu dipenuhi peta, gambar, dan simbol-simbol magis yang belum bisa kau pecahkan. Satu coretan mencolok tertulis: 'Zona Terkutuk - kebenaran menunggu`,
+        a2: {
+            text: `<p>aku pergi ke arah pusat kota, dan banyak bangunan yang telah runtuh.
+
+            <p>namun untungnya ada beberapa bangunan, yang tidak sepenuhnya hancur, aku mencoba memeriksa bangunan itu, dan menemukan beberapa barang yang berguna seperti pisau dapur, korek, minyak mesin, kain dan makanan kaleng.
+
+            <p>setelah memeriksa 1 bagunan itu, aku memeriksa bagunan lainya.
+
+            <p>dari kejauhan aku melihat sebuah tikus yang lumayan besar dan ganas, yang berlari ke arah ku, </p>
+            <p> aku mengeluar pisau dapur yang ku temukan tadi`,
             img: "../images/aria_notes.jpg",
             options: [
-                { text: "Bawa perlengkapan dan pergi", nextScene: "aria_scene4" },
-                { text: "Tunggu Kael datang", nextScene: "aria_scene3" }
+                { text: "mencoba untuk melawan", nextScene: "a4" },
+                { text: "simpan pisau itu dan lari", nextScene: "aria_scene3" }
             ]
         },
-        aria_scene3: {
-            text: `<p>Kael tiba-tiba membanting pintu. '{{nama}}, kau harus ikut sekarang. Aku menemukannya... jejak itu nyata!`,
+        a3: {
+            text: `<p>Aku berjalan ke ujung kota, dekat dengan hutan, tidak banyak bangunan ku temukan.
+
+                    <p>namun banyak bangunan yang tidak sepenuhnya hancur "
+
+                    <p>aku mencoba untuk mencari sesuatu dalam bagunan itu, dan menemukan kapak, kain, dan beberapa makanan kaleng.
+
+                    <p>aku berpikir sepertinya bagus untuk bermalam di sini, karena bangunannya tidak sepenuhnya hancur dan masih dapat di tinggali
+
+                    <p>lalu ku buat perapian agar tetap hangat di malam ini, setelah aku apa yang aku yang ku lakukan?`,
+                    
+                    
             img: "../images/kael_arrives.jpg",
             options: [
-                { text: "Pergi sekarang juga", nextScene: "aria_scene4" },
-                { text: "Tanya detail lebih lanjut", nextScene: "aria_scene3a" }
+                { text: "makan dan lalu tidur", nextScene: "a4a" },
+                { text: "coba jelajahi hutan", nextScene: "a3a" }
             ]
         },
-        aria_scene3a: {
-            text: `<p>"Jejaknya mengarah ke reruntuhan Menara Obsidian. Tapi sesuatu terasa... salah. Ada yang menunggumu di sana`,
+        a3a: {
+            text: `<p>aku mencoba menjelajahi hutan tanpa persiapan, dan mencari beberapa berry yang mungkin dapat di makan
+            <p>aku merasa di dalam hutan ada sesuatu yang mengintai ku, namu aku terus menjelajahi hutan lebih dalam lagi
+            <p>tapi tak ku sangka aku bertemu dengan se-ekor beruang ganas, yang sedang memandangi-ku, aku tak harus berbuat apa`,
             img: "../images/kael_talking.jpg",
             options: [
-                { text: "Tetap pergi meski berbahaya", nextScene: "aria_scene4" },
-                { text: "Buat rencana dulu", nextScene: "aria_scene3b" }
+                { text: "mencoba untuk melawan", nextScene: "a3b" },
+                { text: "lari dan kembali ke rumah", nextScene: "a3b" },
             ]
         },
-        aria_scene3b: {
-            text: `<p>"Kael mengangguk. 'Kita tidak bisa gegabah. Reruntuhan itu hidup—dan bisa memakanmu mentah-mentah.'`,
+        a3b: {
+            text: `<p>aku mengambil posisi bersiap untuk bertarung, dengan kapak di tangan-ku
+            <p> aku berlari ke arahn-nya, dan menhujam kan kapak ke arah bawah seperti kilat, mencabik bahu beruang itu
+            <p> namun beruang dapat masih dapat melawan, dan mencakar badan-ku, lalu beruang itu mencabik badan-ku
+            <p> aku berteriak kesakitan meminta tolong, aku mulai pusing dan pandangan ku mulai gelap.
+            
+            <p> tidak kemudia {{nama}} tewas terbunuh oleh beruang`,
             img: "../images/kael_thinking.jpg",
             options: [
-                { text: "Siapkan jebakan", nextScene: "aria_scene4" },
-                { text: "Berdoa dan berangkat", nextScene: "aria_scene4" }
+                { text: "sad ending", nextScene: "sad ending" },
             ]
         },
-        aria_scene4: {
-            text: `<p>Zona Terkutuk - jantung kota yang hancur. Asap hitam mengalir dari celah-celah retakan bumi. Angin berbisik seolah mengingatkanmu akan masa lalu yang dilupakan`,
+        a4: {
+            text: `<p>aku melawanya dengan tenaga yang seadanya, aku menusuk seperti ular, pisau melesat masuk-keluar dari perut tikus mutan itu sebelum darah sempat mengucur.
+            <p>Suara pisau menembus daging seperti mengiris daging mentah—cepat, basah, dan jijik.
+            <p>namun tikus mutan itu melawan dengan mecakar pergelagan tangan ku.
+            <p>darah mengalir dari pergelangan tangan ku dan membasahi lengan baju ku.
+            <p>aku menarik pisau keluar dan menyambar ke samping—sepotong kilat logam menyayat leher tikus mutan itu, 
+            <p> darah terus mengucur deras dari leher tikus itu, tikus itu meronta kesakitan dan tidak berapa lama kemudian, tikus itu diam dan mati kehabisan darah
+            <p>Kaki-ku gemetar seperti agar-agar, lalu aku terjatuh di samping mayat itu, napasx     terengah-engah seperti ikan yang terdampar dan lalu pingsan`,
             img: "../images/ruins_scene.jpg",
             options: [
-                { text: "Lanjutkan menyelidiki", nextScene: "aria_scene5" },
-                { text: "Segera peringatkan Kael", nextScene: "aria_scene6" }
+                { text: "ke-esokan harinya", nextScene: "a6" },
+                
             ]
         },
-        aria_scene5: {
-            text: `<p>Tiba-tiba tanah bergetar. Sosok berjubah muncul dari balik kabut. 'Akhirnya kau datang... {{nama}}.`,
+        a4a: {
+            text: `<p>aku memakan makanan kaleng dan lalu tidur`,
+            img: "../images/ruins_scene.jpg",
+            options: [
+                { text: "ke-esokan harinya", nextScene: "a5" }
+            ]
+        },
+        a5: {
+            text: `<p>aku bangun dengan keadaan segar dan badan ku terasa lebih bertenaga,
+            <p> aku keluar dari bangunan itu dan berkeliling sekitar ujung kota ini
+            <p> dari arah kejauhan, ada sebuah rumah yang tampak sangat bersih
+            <p> sepertinya ada kehidupan di rumah itu`,
             img: "../images/mystery_man_appears.jpg",
             options: [
-                { text: "Tanyakan bagaimana dia mengenalmu", nextScene: "aria_truth_path" },
-                { text: "Serang dia karena tidak percaya", nextScene: "aria_capture_path" },
-                { text: "Gunakan magis untuk baca ingatannya", nextScene: "aria_memory_path" }
+                { text: "pergi dan lihat rumah itu", nextScene: "a5a" },
+                { text: "lihat rumah itu dari kejauhan", nextScene: "a5b" },
             ]
         },
-        aria_truth_path: {
-            text: `<p>Dia mengungkapkan bahwa kalian terikat dalam eksperimen masa lalu. Kau adalah kunci, dan waktu kalian hampir habis.`,
+        a6: {
+            text: `<p>aku bangun dari tidur ku, namun tenaga ku tidak begitu banyak karena pertempuran semalam
+            <p> aku mencoba mencari barang yang ada di pusat kota ini
+            <p> setelah berkeliling di semua bangunan puat kota
+            <p> tiba-tiba Sebilah anak panah menyambar dari balik puing-puing bangunan, meleset sejengkal dari pelipisku - aku mendengar whoosh udara yang terbelah sebelum tok! diding di belakangku tertancap mata panah berkarat."
+            <p>Bulu ekor panah masih bergetar seperti lebah yang baru menyengat.
+            <p> "hei kau yang disana, apa yang kau lakukan, tunjukan dirimu jika tidak aku akan membunuhmu" ucap seseorang dengan suara yang halus namun tinggi`,
             img: "../images/truth_revealed.jpg",
             options: [
-                { text: "Bergabung dengannya", nextScene: "aria_ending1" },
-                { text: "Tetap waspada", nextScene: "aria_ending2" }
+                { text: "tunjukan diri", nextScene: "a6a" },
+                { text: "Tetap waspada dan tenang", nextScene: "a6b" },
             ]
         },
-        aria_capture_path: {
-            text: `<p>Seranganmu gagal. Sosok itu menahanmu dengan kekuatan tak terlihat. Kesadaranmu menghilang dalam kegelapan.`,
+        a5a: {
+            text: `<p>aku berjalan kearah rumah itu, dan tidak melihat tanda2 kehidupan di dalam rumah itu
+            <p> aku mencoba masuk ke dalam rumah itu, namun pintu rumah itu terkunci
+            <p> ku hancur pintu itu dengan kapak yang ku temukan
+            <p> tidak lama kemudian sebuah suara langkah kaki terdengar dalam suara rumah, dan lalu aku bersembunyi dalam rumah itu
+            <p> tidak lama kemudia seorang wanita muda dengan sebuah pisau di tangannya, yang sedang berwaspada.`,
             img: "../images/aria_captured.jpg",
             options: [
-                { text: "Bangun di sel tahanan", nextScene: "aria_prison_scene" }
+                { text: "sergap dari belakang", nextScene: "a7a" },
+                { text: "menunjukan diri", nextScene: "a7b" },
             ]
         },
+
+        a5b: {
+            text: `<p>tidak berapa lama kemudian, dari kejauhan aku melihat seorang wanita muda berjalan dan masuk kedalam rumah itu
+            <p> aku mendekati rumah itu, dan berteriak minta tolong, namun bukan sebuah pertolongan yang ku dapati namun sebuah ancaman`,
+            img: "../images/aria_captured.jpg",
+            options: [
+                { text: "angkat tangan", nextScene: "a8a" },
+                { text: "melarikan diri", nextScene: "a8b" },
+            ]
+        },
+
+        a6a: {
+            text: `<p>Tanganku naik perlahan, telapak terbuka ke depan - bahasa universal 'aku tak bersenjata'. Lutut menyentuh tanah, debu menempel di celana. Kepala menunduk, tapi mataku tetap melirik ke atas, mengawasi setiap gerakan musuh.
+            'Aku menyerah,' suaraku datar, sengaja dibuat tanpa emosi agar tak memicu kekerasan lebih jauh.
+            <p>"aku hanya mencari makanan dan beberapa barang, tolong jangan bunuh aku" ucap {{nama}} dengan datar, dan ter-nyata yang ku lihat seorang wanita muda berparas cantik dengan badan yang atletis dan sedikit berotot, tatapanya tajam dan dingin.
+            <p>Ia menendang tulang rusukku untuk memastikan penyerahan tulus. 'Bagus,' bisiknya sambil menginjak tanganku. 'Anjing patuh memang pantas dapat hadiah.'`,
+            img: "../images/aria_captured.jpg",
+            options: [
+                { text: "slave ending", nextScene: "slave_ending" },
+            ]
+        },
+
+        a6b: {
+            text: `<p>Tubuhku bereaksi sebelum otak memproses
+            <p> aku membungkuk rendah, dan bersembunyi di antara puing-puing bangunan.
+            <p>sebuah pecahanan batu kecil dari puing-puing rumah, aku mengambilnya dan Melemparkannya ke arah sumber panah sambil teriak, 'Tampakkan dirimu juga, pengecut!'
+            <p>jantung-ku berdetak dengan sangat kencang, sekarang setiap indra bekerja overdrive, dari yang ku lihat sepertinya anak panah ini berasal dari arah barat laut.
+            <p>Aku membungkuk serendah mungkin, berlari zigzag seperti kelinci dikejar serigala. Panah pertama meleset - kudengar thuk! saat ia menancap di puingpuing bangunan di belakangku.
+            <p>'Sekarang!' Aku maju brutal, memanfaatkan 4 detik emasnya menggapai anak panah baru." `,
+            img: "",
+            options: [
+                {text: "buat luka sayatan kecil", nextScene: "domination_ending"},
+                {text: "buat dia pingsan", nextScene: "true_ending"}
+            ]
+        },
+
+        a7a: {
+            text: `<p>Kapak bergerak mendekat, sisi tajamnya hampir menempel di jaket korban. 'Aku tidak butuh tenagamu,' bisik si {{nama}}, 'tapi kau punya sesuatu yang kuinginkan.
+            <p>Korban membeku. Darahnya berdesir dingin—ia bisa merasakan ketajaman kapak itu tanpa perlu melihat. Sedikit saja ia menoleh, logam itu akan mencukur rambutnya.
+            <p>"turunkan senjata-mu, dan yang kuingin hanyalah makanan dan minuman, atau bekerja sama lah dengan ku" ucap {{nama}} dengan kapak di tangan-nya
+            <p>"tolong jangan bunuh aku, akan ku berikan makananku, dan dari mana kau berasal?" ucap wanita itu.`,
+            img: "../images/aria_captured.jpg",
+            options: [
+                { text: "turunkan senjata", nextScene: "a9a" },
+                { text: "ancam dia lebih keras", nextScene: "dominatin_ending2" },
+            ]
+        },
+
+        a7b: {
+            text: `<p>Aku perlahan mengangkat tangan, telapak terbuka ke depan—isyarat universal 'aku tidak bersenjata'
+            <p>Kubuat gerakanku lambat, sambil mundur selangkah memberi ruang. 'Aku tidak ingin masalah,' kataku, suara sengaja dibuat datar, tidak memancing.
+            <p>"Kita tidak harus bertarung. Aku cari tempat aman, sama seperti kamu." ucap ku sambil mengangkat tangan
+            <p>wanita itu melirik ke pintu, lau kembali kepadaku, 'siapa kau, mengapa masuk ke rumah ku?' suaranya kasar. pisau di ikat pinggangnya berkilat
+            <p>"aku hanya mengira rumah ini sudah di tinggali, aku hanya ingin mencari makan" ucap ku dengan suara tenang mengendalikan situasi
+            <p>Napasnya masih berat, tapi bahunya sedikit turun. 'apakah kamu tidak membawa senjata?' tanyanya, masih curiga.
+            <p>"ada, namun ku gunakan untuk menhacurkan pintu" ucapku dengan jujur
+            <p> wanita itu mulai menurukan senjatanya, dan mengajakku berkenalan`,
+            img: "../images/aria_captured.jpg",
+            options: [
+                { text: "perkenalkan diri", nextScene: "a9a" },
+            ]
+        },
+
+        a8a: {
+            text: `<p>Tanganku melonjak ke atas secepat tersetrum, telapak tangan terbuka. 'Aku tak bersenjata!' suaraku lebih tinggi dari biasanya. Lutut hampir tertekuk sendiri - bukan karena takut, tapi otot yang menegang lalu lemas sekaligus
+            <p>"Kau bisa menggeledahku, aku tak bawa apa-apa."
+            <p>wanita itu muali mendekat dan menggeledahku
+            <p>"baiklah apa yang kau inginkan, jika macam akan ku bunuh" ucap wanita itu dengan nada tinggi.
+            <p>"aku hanya ingin makan dan memiliki tempat tinggal yang layak" ucap diriku dengan tenang.
+            <p>lalu wanita itu menurukan senjatanya, dan mempersilahkan aku memasuki rumah.`,
+            img: "",
+            options: [
+                { text: "ikuti wanita itu", nextScene: "happy_ending"},
+            ]
+        },
+
+        a8b: {
+                text: `<p>"Lari!* teriak instingku. Diam! teriak rasa sakit di kaki. Aku mengabaikan keduanya, terus bergerak sambil mendengar langkah berat di belakang."
+                <p>wanita itu tampak curiga padaku, namun ia membiarkan diriku lari menjauh ketakutan
+                <p>tak sempat untuk meminta bantuan, diriku yang penakut ini sangat akan kematian, nth apa yang akan terjadi di depan, aku hanya berharap agar tetap bisa hidup dengan tenang`,
+                img: "",
+                options: [
+                    {text: "fear ending", nextScene: "fear_ending"}
+                ]
+        },
+
+        a9a: {
+            text:`<p>aku adalah seorang penyintas.
+            <p>aku sedang mencari makanan namun aku tidak menemukan apa pun 
+            <p>hingga akhirnya aku menemukan rumah ini menyala dan sanngat terawat
+            <p>namun tuan rumah sedikit tidak percaya dan menatapku dengan sangat tajam, dia masih terlihat waspada`,
+            img: "",
+            options: [
+                {text: "coba berusaha meyakinkan", nextScene: "happy_ending"}
+            ]
+        },        
+
+        sad_ending: {
+            text: `<h2> sad-ending
+            <p>{{nama}} mati terbunuh oleh beruang, dan mayatnya di makan oleh beruang itu tampa sisa sedikit pun`,
+            img: "",
+            options: [
+                {text:"ulangi permainan", nextScene: "scene1"}
+            ]
+        },
+
+        happy_ending: {
+            text: `<h2> happy-ending
+            <p>wanita itu mulai mempercayai {{nama}},tidak lama kemudian kami saling jatuh cinta, dan hidup bersama hingga maut memisahkan`,
+            img: "",
+            options: [
+                {text: "ulangi permainan", nextScene: "scene1"}
+            ]
+        },
+
+        slave_ending: {
+            text: `<h2> slave-ending
+            <p>{{nama}} terlalu lemah, bahkan di tundukan oleh seorang wanita, dan di jadikan budak oleh wanita tersebut`,
+            img:"",
+            options:[
+                {text: "ulangi permainan", nextScene: "scene1"}
+            ]
+        },
+
+        domination_ending: {
+            text: `<h2> domination-ending
+            <p>pisau menyambar cepat - garis merah muncul di lengan kanannya. Tidak dalam, tapi cukup membuatnya menjerit dan menjatuhkan busur
+            <p> wanita itu ketakutan, dan memohon ampun kepada {{nama}}, dan wanita di jadikan bawahan`,
+            img:"",
+            options:[
+                {text:"ulangi permainan", nextScene:"scene1"}
+            ]
+        },
+
+        true_ending:{
+            text:`<h2> true_ending
+            <P>Tinjuku menghantam solar plexus-nya, saat ia lengah menarik tali busur. Napasnya tercekat - matanya membelalak sebelum tubuhnya rubuh seperti karung gandum.
+            <p>{{nama}} membawa wanita itu ketempat yang lebih aman, dan menunggunya bangun.
+            <p> tidak berapa lama kemudian wanita itu terbangun, dan kami berkenalan untuk tujuan yang sama yaitu memecahkan misteri di dunia ini`,
+            img:"",
+            options:[
+                {text:"ulangi permainan", nextScene:"scene1"}
+            ]
+
+        },
+
+        fear_ending:{
+            text:`<h2> fear_ending
+            <p>{{nama}} lari ketakutan dan masih belum siap menghadapi dunia ini, dan {{nama}} mati kelaparan karena ketakutan yang sangat mendalam dan membuat dirinya begitu truama`,
+            img:"",
+            options:[
+                {text:"ulangi permainan", nextScene:"scene1"}
+            ]
+        },
+
+        domination_ending2: {
+            text:`<h2> domination-ending-2
+            <p>{{nama}} mengancam wanita itu hingga ketakutan dan berlutut meminta ampun, dan akan menuruti semua kemauan {{nama}}`,
+            img:"",
+            options:[
+                {text:"ulangi permainan", nextScene:"scene1"}
+            ]
+        },
+
+
 
         // --- Alur Kael ---
         kael_scene1: {
